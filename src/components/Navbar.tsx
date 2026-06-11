@@ -1,21 +1,22 @@
 import { useState, useEffect } from 'react';
-import { Leaf, Menu, X } from 'lucide-react';
-
-interface NavbarProps {
-  currentPage: string;
-  onNavigate: (page: string) => void;
-}
+import { useNavigate, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import Logo from './ui/Logo';
 
 const navLinks = [
-  { id: 'home', label: 'Home' },
-  { id: 'product', label: 'The Product' },
-  { id: 'team', label: 'Our Team' },
-  { id: 'project', label: 'The Story' },
+  { id: 'home', label: 'Home', path: '/' },
+  { id: 'product', label: 'The Product', path: '/product' },
+  { id: 'team', label: 'Our Team', path: '/team' },
+  { id: 'project', label: 'The Story', path: '/project' },
 ];
 
-export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
+export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const currentPage = location.pathname === '/' ? 'home' : location.pathname.slice(1);
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
@@ -23,8 +24,8 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
     return () => window.removeEventListener('scroll', handler);
   }, []);
 
-  const handleNav = (page: string) => {
-    onNavigate(page);
+  const handleNav = (path: string) => {
+    navigate(path);
     setMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -39,24 +40,14 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <button
-          onClick={() => handleNav('home')}
-          className="flex items-center gap-2 group"
-        >
-          <div className="w-8 h-8 bg-forest-DEFAULT rounded-full flex items-center justify-center group-hover:bg-forest-400 transition-colors">
-            <Leaf className="w-4 h-4 text-beige-100" />
-          </div>
-          <span className="font-serif text-xl font-semibold text-forest-700 tracking-tight">
-            Planco
-          </span>
-        </button>
+        <Logo variant="light" clickable />
 
         {/* Desktop Links */}
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.id}>
               <button
-                onClick={() => handleNav(link.id)}
+                onClick={() => handleNav(link.path)}
                 className={`text-sm font-medium transition-colors relative group ${
                   currentPage === link.id
                     ? 'text-forest-DEFAULT'
@@ -76,7 +67,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
 
         {/* CTA */}
         <button
-          onClick={() => handleNav('product')}
+          onClick={() => handleNav('/product')}
           className="hidden md:inline-flex items-center gap-2 bg-forest-DEFAULT text-beige-100 text-sm font-medium px-5 py-2.5 rounded-full hover:bg-forest-400 transition-all duration-300 hover:shadow-lg hover:shadow-forest-DEFAULT/20 active:scale-95"
         >
           Explore Product
@@ -102,7 +93,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
           {navLinks.map((link) => (
             <li key={link.id}>
               <button
-                onClick={() => handleNav(link.id)}
+                onClick={() => handleNav(link.path)}
                 className={`text-sm font-medium w-full text-left ${
                   currentPage === link.id ? 'text-forest-DEFAULT' : 'text-forest-600'
                 }`}
@@ -113,7 +104,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
           ))}
           <li>
             <button
-              onClick={() => handleNav('product')}
+              onClick={() => handleNav('/product')}
               className="w-full bg-forest-DEFAULT text-beige-100 text-sm font-medium px-5 py-2.5 rounded-full hover:bg-forest-400 transition-colors"
             >
               Explore Product

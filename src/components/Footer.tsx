@@ -1,12 +1,12 @@
-import { Leaf, Github, Twitter, Linkedin } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Github, Twitter, Linkedin } from 'lucide-react';
+import Logo from './ui/Logo';
 
-interface FooterProps {
-  onNavigate: (page: string) => void;
-}
+export default function Footer() {
+  const navigate = useNavigate();
 
-export default function Footer({ onNavigate }: FooterProps) {
-  const handleNav = (page: string) => {
-    onNavigate(page);
+  const handleNav = (path: string) => {
+    navigate(path);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -16,12 +16,7 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-sage-400 rounded-full flex items-center justify-center">
-                <Leaf className="w-4 h-4 text-forest-800" />
-              </div>
-              <span className="font-serif text-xl font-semibold text-beige-100">Planco</span>
-            </div>
+            <Logo variant="dark" className="mb-4" />
             <p className="text-beige-400 text-sm leading-relaxed max-w-xs">
               An AI-driven IoT system for intelligent, everyday plant care that makes plant health transparent.
             </p>
@@ -43,14 +38,14 @@ export default function Footer({ onNavigate }: FooterProps) {
             <h4 className="text-beige-100 text-sm font-semibold uppercase tracking-widest mb-5">Navigate</h4>
             <ul className="space-y-3">
               {[
-                { id: 'home', label: 'Home' },
-                { id: 'product', label: 'The Product' },
-                { id: 'team', label: 'Our Team' },
-                { id: 'project', label: 'The Story' },
+                { path: '/', label: 'Home' },
+                { path: '/product', label: 'The Product' },
+                { path: '/team', label: 'Our Team' },
+                { path: '/project', label: 'The Story' },
               ].map((link) => (
-                <li key={link.id}>
+                <li key={link.path}>
                   <button
-                    onClick={() => handleNav(link.id)}
+                    onClick={() => handleNav(link.path)}
                     className="text-beige-400 text-sm hover:text-beige-100 transition-colors"
                   >
                     {link.label}
