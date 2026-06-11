@@ -4,6 +4,7 @@ import PageTitle from '../components/sections/PageTitle';
 import SectionTitle from '../components/sections/SectionTitle';
 import Quote from '../components/sections/Quote';
 import FeatureCard from '../components/ui/FeatureCard';
+import ImageGallery from '../components/ui/ImageGallery';
 
 const sensors = [
   {
@@ -73,6 +74,15 @@ export default function Product() {
         label="The Product"
         title="An IoT & AI system that gives plants a voice"
         subtitle="Five sensors. One AI brain. One mobile app. Complete plant health transparency."
+      />
+
+      <ImageGallery
+        images={[
+          { src: 'https://images.pexels.com/photos/4505166/pexels-photo-4505166.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'IoT sensor in plant pot' },
+          { src: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Sensor hardware components' },
+          { src: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Testing the sensor unit' },
+          { src: 'https://images.pexels.com/photos/7318070/pexels-photo-7318070.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Mobile app interface' },
+        ]}
       />
 
       <section className="py-24 bg-beige-100">
