@@ -1,69 +1,69 @@
-import { Star, Users, Heart, Laugh } from 'lucide-react';
-import Button from '../components/ui/Button';
-import ImageCard from '../components/ui/ImageCard';
-import Quote from '../components/sections/Quote';
-import PageTitle from '../components/sections/PageTitle';
-import SectionTitle from '../components/sections/SectionTitle';
+import { Star, Users, Heart, Laugh } from "lucide-react";
+import Button from "../components/ui/Button";
+import ImageCard from "../components/ui/ImageCard";
+import Quote from "../components/sections/Quote";
+import PageTitle from "../components/sections/PageTitle";
+import SectionTitle from "../components/sections/SectionTitle";
 
 const members = [
   {
-    name: 'Yannick Blatty',
-    role: 'Project Lead',
-    focus: 'Coordination & Communication',
-    desc: 'Yannick kept the ship pointed in the right direction. As Project Lead he orchestrated all moving parts — from milestone tracking to stakeholder communication — ensuring the team never lost sight of the vision.',
-    traits: ['Strategic thinking', 'Team cohesion', 'Communication'],
-    img: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400',
-    accent: 'bg-forest-DEFAULT',
+    name: "Yannick Blatty",
+    role: "Project Lead",
+    focus: "Coordination & Communication",
+    desc: "Yannick kept the ship pointed in the right direction. As Project Lead he orchestrated all moving parts — from milestone tracking to stakeholder communication — ensuring the team never lost sight of the vision.",
+    traits: ["Strategic thinking", "Team cohesion", "Communication"],
+    img: "https://static.vecteezy.com/system/resources/thumbnails/004/511/281/small/default-avatar-photo-placeholder-profile-picture-vector.jpg",
+    accent: "bg-forest-DEFAULT",
   },
   {
-    name: 'Marvin Hegi',
-    role: 'Quality Guardian',
-    focus: 'Testing, Quality & Documentation',
-    desc: 'Marvin was the voice of rigor. He defined test cases, maintained documentation standards, and made sure every claim about Planco was backed by evidence. The 95% accuracy stat? That has Marvin\'s fingerprints on it.',
-    traits: ['Test design', 'Documentation', 'Attention to detail'],
-    img: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400',
-    accent: 'bg-sage-400',
+    name: "Marvin Hegi",
+    role: "Quality Guardian",
+    focus: "Testing, Quality & Documentation",
+    desc: "Marvin was the voice of rigor. He defined test cases, maintained documentation standards, and made sure every claim about Planco was backed by evidence. The 95% accuracy stat? That has Marvin's fingerprints on it.",
+    traits: ["Test design", "Documentation", "Attention to detail"],
+    img: "https://static.vecteezy.com/system/resources/thumbnails/004/511/281/small/default-avatar-photo-placeholder-profile-picture-vector.jpg",
+    accent: "bg-sage-400",
   },
   {
-    name: 'Tobias Clausen',
-    role: 'Analyst',
-    focus: 'Analysis, Requirements & Risk Management',
-    desc: 'Tobias translated ambiguity into clarity. He led requirements engineering, dissected risks before they materialized, and built the analytical foundation that gave every design decision a solid rationale.',
-    traits: ['Risk analysis', 'Requirements', 'Systems thinking'],
-    img: 'https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=400',
-    accent: 'bg-amber-600',
+    name: "Tobias Clausen",
+    role: "Analyst",
+    focus: "Analysis, Requirements & Risk Management",
+    desc: "Tobias translated ambiguity into clarity. He led requirements engineering, dissected risks before they materialized, and built the analytical foundation that gave every design decision a solid rationale.",
+    traits: ["Risk analysis", "Requirements", "Systems thinking"],
+    img: "https://static.vecteezy.com/system/resources/thumbnails/004/511/281/small/default-avatar-photo-placeholder-profile-picture-vector.jpg",
+    accent: "bg-amber-600",
   },
   {
-    name: 'Nils Utiger',
-    role: 'Tech Lead',
-    focus: 'Technology & Migration (Hardware)',
-    desc: 'Nils made the hardware breathe. He selected sensors, wired the IoT unit, set up the MQTT pipeline, and handled all technical migration challenges. If Planco measures something accurately, Nils built the part that measures it.',
-    traits: ['IoT hardware', 'MQTT / WLAN', 'Systems integration'],
-    img: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400',
-    accent: 'bg-forest-600',
+    name: "Nils Utiger",
+    role: "Tech Lead",
+    focus: "Technology & Migration (Hardware)",
+    desc: "Nils made the hardware breathe. He selected sensors, wired the IoT unit, set up the MQTT pipeline, and handled all technical migration challenges. If Planco measures something accurately, Nils built the part that measures it.",
+    traits: ["IoT hardware", "MQTT / WLAN", "Systems integration"],
+    img: "https://static.vecteezy.com/system/resources/thumbnails/004/511/281/small/default-avatar-photo-placeholder-profile-picture-vector.jpg",
+    accent: "bg-forest-600",
   },
 ];
 
 const cultureValues = [
   {
     icon: Users,
-    title: 'Respectful Collaboration',
-    desc: 'Every idea received a fair hearing. Disagreements were resolved through structured discussion, never hierarchy.',
+    title: "Respectful Collaboration",
+    desc: "Every idea received a fair hearing. Disagreements were resolved through structured discussion, never hierarchy.",
   },
   {
     icon: Heart,
-    title: 'Shared Responsibility',
-    desc: 'Ownership was collective. When something succeeded, the team celebrated together. When it failed, they fixed it together.',
+    title: "Shared Responsibility",
+    desc: "Ownership was collective. When something succeeded, the team celebrated together. When it failed, they fixed it together.",
   },
   {
     icon: Star,
-    title: 'Commitment to Quality',
-    desc: 'Good enough was never good enough. The team held each other to high standards throughout every project phase.',
+    title: "Commitment to Quality",
+    desc: "Good enough was never good enough. The team held each other to high standards throughout every project phase.",
   },
   {
     icon: Laugh,
-    title: 'A Healthy Dose of Humor',
-    desc: 'Levity made hard sprints bearable. Planco was built with plenty of laughter alongside the late nights.',
+    title: "A Healthy Dose of Humor",
+    desc: "Levity made hard sprints bearable. Planco was built with plenty of laughter alongside the late nights.",
   },
 ];
 
@@ -120,8 +120,12 @@ export default function Team() {
                 <div className="w-10 h-10 bg-forest-DEFAULT/10 rounded-xl flex items-center justify-center mb-4">
                   <Icon className="w-5 h-5 text-forest-DEFAULT" />
                 </div>
-                <h3 className="font-serif text-lg text-forest-800 mb-2">{title}</h3>
-                <p className="text-forest-500 text-sm leading-relaxed">{desc}</p>
+                <h3 className="font-serif text-lg text-forest-800 mb-2">
+                  {title}
+                </h3>
+                <p className="text-forest-500 text-sm leading-relaxed">
+                  {desc}
+                </p>
               </div>
             ))}
           </div>
@@ -131,8 +135,11 @@ export default function Team() {
       {/* CTA */}
       <section className="py-20 bg-beige-50 text-center">
         <div className="max-w-lg mx-auto px-6">
-          <h2 className="font-serif text-3xl md:text-4xl text-forest-800 mb-4">Want to know how it all came together?</h2>
-          <p className="text-forest-500 mb-8">Explore the project journey — five phases, one semester, and a lot of learning.</p>
+          <SectionTitle
+            label="What We Built"
+            title="Want to know how it all came together?"
+            subtitle="Explore the project journey — five phases, one semester, and a lot of learning."
+          />
           <Button to="/project">Read the Story</Button>
         </div>
       </section>

@@ -46,7 +46,7 @@ const phases = [
     icon: Presentation,
     name: 'Final Presentation',
     duration: 'Week 14',
-    desc: 'The semester concluded with a live demonstration of the complete Planco system. The team presented their findings, the technical implementation, and the validated results to instructors and peers. The project received recognition for its ambition and execution quality.',
+    desc: 'The semester concluded with a live demonstration of the complete Planco system. The team presented their findings, the technical implementation, and the validated results to instructors and peers.',
     deliverables: ['Final report', 'Live demo', 'Presentation deck', 'Lessons learned'],
     img: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
@@ -81,25 +81,6 @@ export default function Project() {
         title="From a classroom idea to a working plant intelligence system"
         subtitle="One semester. Five structured phases. Four students. This is how Planco was built."
       />
-
-      {/* Context block */}
-      <section className="py-16 bg-forest-DEFAULT">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            {[
-              { value: '1 Semester', label: 'Project Duration', sub: '~14 weeks of work' },
-              { value: '5 Phases', label: 'Structured Process', sub: 'From concept to presentation' },
-              { value: '3 Tools', label: 'Tech Stack', sub: 'Teams, GitHub, MQTT' },
-            ].map(({ value, label, sub }) => (
-              <div key={label}>
-                <div className="font-serif text-3xl font-bold text-beige-100 mb-1">{value}</div>
-                <div className="text-sage-200 text-sm font-medium mb-1">{label}</div>
-                <div className="text-forest-300 text-xs">{sub}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Phases */}
       <section className="py-24 bg-beige-100">
@@ -154,34 +135,15 @@ export default function Project() {
       </section>
 
       {/* Outcome */}
-      <section className="py-24 bg-beige-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="text-xs font-semibold uppercase tracking-widest text-forest-DEFAULT mb-3 block">What We Learned</span>
-              <h2 className="font-serif text-4xl text-forest-800 leading-tight mb-6">
-                A semester that changed how we think about plants and technology
-              </h2>
-              <p className="text-forest-600 leading-relaxed mb-6">
-                Planco proved that IoT and AI don't need to be intimidating — they just need a real problem worth solving. The structured five-phase approach kept the team aligned and productive across 14 weeks without losing the creative energy that started it all.
-              </p>
-              <p className="text-forest-500 text-sm leading-relaxed mb-8">
-                Beyond the technical outcomes, the team developed a deep respect for iterative development, honest testing, and the value of documentation as a communication tool — not just a bureaucratic formality.
-              </p>
-              <Button to="/product">Explore the Product</Button>
-            </div>
-            <div className="relative">
-              <img
-                src="https://images.pexels.com/photos/1366630/pexels-photo-1366630.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Thriving plant collection"
-                className="rounded-2xl w-full object-cover h-96"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-forest-DEFAULT rounded-xl p-5 shadow-xl max-w-56">
-                <div className="font-serif text-3xl font-bold text-beige-100 mb-1">20%</div>
-                <div className="text-sage-200 text-xs uppercase tracking-wider">Reduction in plant mortality</div>
-              </div>
-            </div>
-          </div>
+      <section className="py-20 bg-beige-50 text-center">
+        <div className="max-w-lg mx-auto px-6">
+                    <SectionTitle
+                      label="The Outcome"
+                      title="A working prototype and a semester of learning"
+                      subtitle="Planco proved that a structured, collaborative approach can turn an ambitious idea into a real, functioning system in just 14 weeks."
+                    />
+                    <Button to="/product">Explore the Product</Button>
+          
         </div>
       </section>
     </main>
