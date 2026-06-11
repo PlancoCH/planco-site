@@ -24,7 +24,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center overflow-hidden bg-beige-50">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.pexels.com/photos/1084199/pexels-photo-1084199.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src="https://cdn.pixabay.com/photo/2024/08/04/15/38/monstera-deliciosa-8944711_960_720.jpg"
             alt="Lush green tropical plants"
             className="w-full h-full object-cover opacity-40"
           />
