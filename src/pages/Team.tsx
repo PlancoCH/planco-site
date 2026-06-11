@@ -1,8 +1,5 @@
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Star, Users, Heart, Laugh } from 'lucide-react';
-
-interface TeamProps {
-  onNavigate: (page: string) => void;
-}
 
 const members = [
   {
@@ -66,11 +63,8 @@ const cultureValues = [
   },
 ];
 
-export default function Team({ onNavigate }: TeamProps) {
-  const handleNav = (page: string) => {
-    onNavigate(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+export default function Team() {
+  const navigate = useNavigate();
 
   return (
     <main className="pt-16">
@@ -189,7 +183,7 @@ export default function Team({ onNavigate }: TeamProps) {
           <h2 className="font-serif text-3xl md:text-4xl text-forest-800 mb-4">Want to know how it all came together?</h2>
           <p className="text-forest-500 mb-8">Explore the project journey — five phases, one semester, and a lot of learning.</p>
           <button
-            onClick={() => handleNav('project')}
+            onClick={() => navigate('/project')}
             className="group inline-flex items-center gap-3 bg-forest-DEFAULT text-beige-100 font-semibold px-7 py-4 rounded-full hover:bg-forest-400 transition-all duration-300 hover:shadow-xl hover:shadow-forest-DEFAULT/25"
           >
             Read the Story

@@ -1,9 +1,6 @@
 import { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Wifi, Brain, Smartphone, ChevronDown, Droplets, Sun, Thermometer, Wind } from 'lucide-react';
-
-interface HomeProps {
-  onNavigate: (page: string) => void;
-}
 
 const stats = [
   { value: '95%', label: 'Measurement Accuracy' },
@@ -19,7 +16,14 @@ const sensors = [
   { icon: Wind, label: 'Air & Humidity', color: 'text-sage-400' },
 ];
 
-export default function Home({ onNavigate }: HomeProps) {
+const pagePaths: Record<string, string> = {
+  product: '/product',
+  team: '/team',
+  project: '/project',
+};
+
+export default function Home() {
+  const navigate = useNavigate();
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -34,7 +38,7 @@ export default function Home({ onNavigate }: HomeProps) {
   }, []);
 
   const handleNav = (page: string) => {
-    onNavigate(page);
+    navigate(pagePaths[page]);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

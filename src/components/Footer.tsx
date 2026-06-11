@@ -1,12 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import { Leaf, Github, Twitter, Linkedin } from 'lucide-react';
 
-interface FooterProps {
-  onNavigate: (page: string) => void;
-}
+export default function Footer() {
+  const navigate = useNavigate();
 
-export default function Footer({ onNavigate }: FooterProps) {
-  const handleNav = (page: string) => {
-    onNavigate(page);
+  const handleNav = (path: string) => {
+    navigate(path);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -43,14 +42,14 @@ export default function Footer({ onNavigate }: FooterProps) {
             <h4 className="text-beige-100 text-sm font-semibold uppercase tracking-widest mb-5">Navigate</h4>
             <ul className="space-y-3">
               {[
-                { id: 'home', label: 'Home' },
-                { id: 'product', label: 'The Product' },
-                { id: 'team', label: 'Our Team' },
-                { id: 'project', label: 'The Story' },
+                { path: '/', label: 'Home' },
+                { path: '/product', label: 'The Product' },
+                { path: '/team', label: 'Our Team' },
+                { path: '/project', label: 'The Story' },
               ].map((link) => (
-                <li key={link.id}>
+                <li key={link.path}>
                   <button
-                    onClick={() => handleNav(link.id)}
+                    onClick={() => handleNav(link.path)}
                     className="text-beige-400 text-sm hover:text-beige-100 transition-colors"
                   >
                     {link.label}
