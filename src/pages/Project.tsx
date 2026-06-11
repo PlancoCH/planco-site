@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router-dom';
-import { Target, Map, Code2, TestTube, Presentation, Github, MessageSquare, Wifi, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Target, Map, Code2, TestTube, Presentation, Github, MessageSquare, Wifi, CheckCircle2 } from 'lucide-react';
+import Button from '../components/ui/Button';
 
 const phases = [
   {
@@ -71,8 +71,6 @@ const tools = [
 ];
 
 export default function Project() {
-  const navigate = useNavigate();
-
   return (
     <main className="pt-16">
       {/* Hero */}
@@ -227,13 +225,7 @@ export default function Project() {
               <p className="text-forest-500 text-sm leading-relaxed mb-8">
                 Beyond the technical outcomes, the team developed a deep respect for iterative development, honest testing, and the value of documentation as a communication tool — not just a bureaucratic formality.
               </p>
-              <button
-                onClick={() => navigate('/product')}
-                className="group inline-flex items-center gap-3 bg-forest-DEFAULT text-beige-100 font-semibold px-7 py-4 rounded-full hover:bg-forest-400 transition-all duration-300 hover:shadow-xl hover:shadow-forest-DEFAULT/25"
-              >
-                Explore the Product
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              <Button to="/product">Explore the Product</Button>
             </div>
             <div className="relative">
               <img

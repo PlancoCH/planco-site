@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router-dom';
-import { Droplets, Sun, Thermometer, Wind, Gauge, Wifi, Brain, Smartphone, CheckCircle2, ArrowRight, Zap, Shield, TrendingUp } from 'lucide-react';
+import { Droplets, Sun, Thermometer, Wind, Gauge, Wifi, Brain, Smartphone, CheckCircle2, Zap, Shield, TrendingUp } from 'lucide-react';
+import Button from '../components/ui/Button';
 
 const sensors = [
   {
@@ -63,8 +63,6 @@ const aiFeatures = [
 ];
 
 export default function Product() {
-  const navigate = useNavigate();
-
   return (
     <main className="pt-16">
       {/* Hero */}
@@ -251,13 +249,7 @@ export default function Product() {
         <div className="max-w-lg mx-auto px-6">
           <h2 className="font-serif text-3xl md:text-4xl text-forest-800 mb-4">Curious about the team?</h2>
           <p className="text-forest-500 mb-8">Meet the four engineers who built Planco from idea to working prototype.</p>
-          <button
-            onClick={() => navigate('/team')}
-            className="group inline-flex items-center gap-3 bg-forest-DEFAULT text-beige-100 font-semibold px-7 py-4 rounded-full hover:bg-forest-400 transition-all duration-300 hover:shadow-xl hover:shadow-forest-DEFAULT/25"
-          >
-            Meet the Team
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
+          <Button to="/team">Meet the Team</Button>
         </div>
       </section>
     </main>

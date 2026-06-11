@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ArrowRight, Wifi, Brain, Smartphone, ChevronDown, Droplets, Sun, Thermometer, Wind } from 'lucide-react';
+import { Wifi, Brain, Smartphone, ChevronDown, Droplets, Sun, Thermometer, Wind } from 'lucide-react';
+import Button from '../components/ui/Button';
 
 const stats = [
   { value: '95%', label: 'Measurement Accuracy' },
@@ -16,14 +16,7 @@ const sensors = [
   { icon: Wind, label: 'Air & Humidity', color: 'text-sage-400' },
 ];
 
-const pagePaths: Record<string, string> = {
-  product: '/product',
-  team: '/team',
-  project: '/project',
-};
-
 export default function Home() {
-  const navigate = useNavigate();
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -36,11 +29,6 @@ export default function Home() {
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
-
-  const handleNav = (page: string) => {
-    navigate(pagePaths[page]);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   return (
     <main>
@@ -80,19 +68,8 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={() => handleNav('product')}
-                className="group inline-flex items-center gap-3 bg-forest-DEFAULT text-beige-100 font-semibold px-7 py-4 rounded-full hover:bg-forest-400 transition-all duration-300 hover:shadow-xl hover:shadow-forest-DEFAULT/25 active:scale-95"
-              >
-                Understand Your Plants Today
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button
-                onClick={() => handleNav('project')}
-                className="inline-flex items-center gap-2 text-forest-600 font-medium px-7 py-4 rounded-full border border-forest-300 hover:border-forest-DEFAULT hover:text-forest-DEFAULT transition-all duration-300"
-              >
-                Read the Story
-              </button>
+              <Button to="/product">Understand Your Plants Today</Button>
+              <Button to="/project" variant="secondary">Read the Story</Button>
             </div>
 
             {/* Sensor pills */}
@@ -241,13 +218,7 @@ export default function Home() {
               <p className="text-forest-600 leading-relaxed mb-6">
                 Planco's IoT sensor unit sits discreetly in your plant's pot, measuring five critical environmental parameters every few seconds. The AI backend translates raw data into plain-language health reports and actionable care recommendations.
               </p>
-              <button
-                onClick={() => handleNav('product')}
-                className="group inline-flex items-center gap-2 text-forest-DEFAULT font-semibold hover:gap-3 transition-all"
-              >
-                Discover the full product
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              <Button to="/product" variant="ghost">Discover the full product</Button>
             </div>
           </div>
         </div>
@@ -263,13 +234,7 @@ export default function Home() {
           <p className="text-forest-500 max-w-lg mx-auto mb-10">
             Four students united by a love for plants, technology, and an irreverent team culture.
           </p>
-          <button
-            onClick={() => handleNav('team')}
-            className="group inline-flex items-center gap-3 bg-forest-DEFAULT text-beige-100 font-semibold px-7 py-4 rounded-full hover:bg-forest-400 transition-all duration-300 hover:shadow-xl hover:shadow-forest-DEFAULT/25"
-          >
-            Meet the Team
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
+          <Button to="/team">Meet the Team</Button>
         </div>
       </section>
     </main>
