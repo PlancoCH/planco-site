@@ -28,7 +28,7 @@ export default function Home() {
             alt="Lush green tropical plants"
             className="w-full h-full object-cover opacity-40"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-beige-50/70 via-beige-50/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-beige-200/70 via-beige-200/40 to-transparent" />
         </div>
 
         <div className="absolute top-32 -right-16 w-80 h-80 rounded-full bg-sage-200 opacity-40 blur-3xl pointer-events-none" />
@@ -55,7 +55,9 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button to="/product">Understand Your Plants Today</Button>
               <Button to="/project" variant="secondary">Read the Story</Button>
-            </div>
+
+
+        </div>
           </div>
         </div>
 
@@ -72,9 +74,14 @@ export default function Home() {
             label="The Sensor"
             title="A single device that listens to your plant"
           />
-          <p className="text-forest-600 leading-relaxed max-w-2xl mx-auto text-center">
-            Planco's IoT sensor unit sits discreetly in your plant's pot, measuring five critical environmental parameters — soil moisture, light intensity, temperature, air humidity, and air pressure — every few seconds. The data streams wirelessly to an AI backend that translates raw numbers into clear, actionable care advice, so you always know exactly what your plant needs before visible symptoms appear.
-          </p>
+          <ImageCard
+            variant="horizontal"
+            image="https://images.pexels.com/photos/4505166/pexels-photo-4505166.jpeg?auto=compress&cs=tinysrgb&w=800"
+            imageAlt="Planco IoT sensor unit"
+            title="Five sensors, one compact device"
+            paragraph="The Planco sensor unit combines a capacitive soil moisture probe, ambient light sensor, temperature and humidity sensor, and a barometric pressure sensor into a single, discreet package. It connects via WLAN and transmits readings in real time through the MQTT protocol."
+            tags={["Soil Moisture", "Light (Lux)", "Temperature", "Humidity", "Air Pressure"]}
+          />
         </div>
       </section>
 

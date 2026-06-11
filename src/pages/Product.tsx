@@ -3,6 +3,7 @@ import Button from '../components/ui/Button';
 import PageTitle from '../components/sections/PageTitle';
 import SectionTitle from '../components/sections/SectionTitle';
 import Quote from '../components/sections/Quote';
+import FeatureCard from '../components/ui/FeatureCard';
 
 const sensors = [
   {
@@ -175,17 +176,8 @@ export default function Product() {
           />
 
           <div className="grid md:grid-cols-2 gap-8">
-            {aiFeatures.map(({ icon: Icon, title, desc }) => (
-              <div
-                key={title}
-                className="bg-beige-50 rounded-2xl border border-beige-300 p-8 hover:border-forest-300 hover:shadow-lg hover:shadow-forest-DEFAULT/10 transition-all duration-300"
-              >
-                <div className="w-12 h-12 bg-forest-DEFAULT/10 rounded-xl flex items-center justify-center mb-5">
-                  <Icon className="w-6 h-6 text-forest-DEFAULT" />
-                </div>
-                <h3 className="font-serif text-xl text-forest-800 mb-3">{title}</h3>
-                <p className="text-forest-500 text-sm leading-relaxed">{desc}</p>
-              </div>
+            {aiFeatures.map(({ icon, title, desc }) => (
+              <FeatureCard key={title} icon={icon} title={title} description={desc} />
             ))}
           </div>
         </div>
@@ -197,11 +189,13 @@ export default function Product() {
         imageAlt="Close up of healthy tropical plant leaves"
       />
 
-      {/* CTA */}
-      <section className="py-20 bg-beige-50 text-center">
-        <div className="max-w-lg mx-auto px-6">
-          <h2 className="font-serif text-3xl md:text-4xl text-forest-800 mb-4">Curious about the team?</h2>
-          <p className="text-forest-500 mb-8">Meet the four engineers who built Planco from idea to working prototype.</p>
+      <section className="py-24 bg-beige-50">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <SectionTitle
+            label="The People Behind It"
+            title="Built with passion and a little humor"
+            subtitle="Four students united by a love for plants, technology, and an irreverent team culture."
+          />
           <Button to="/team">Meet the Team</Button>
         </div>
       </section>
