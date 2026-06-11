@@ -1,5 +1,6 @@
-import { Target, Map, Code2, TestTube, Presentation, Github, MessageSquare, Wifi, CheckCircle2 } from 'lucide-react';
+import { Target, Map, Code2, TestTube, Presentation, Github, MessageSquare, Wifi } from 'lucide-react';
 import Button from '../components/ui/Button';
+import ImageCard from '../components/ui/ImageCard';
 import PageTitle from '../components/sections/PageTitle';
 import SectionTitle from '../components/sections/SectionTitle';
 
@@ -109,53 +110,19 @@ export default function Project() {
           />
 
           <div className="space-y-6">
-            {phases.map((phase, i) => {
-              const Icon = phase.icon;
-              const isEven = i % 2 === 0;
-              return (
-                <div
-                  key={phase.number}
-                  className="group grid md:grid-cols-5 rounded-3xl overflow-hidden border border-beige-300 hover:border-forest-300 hover:shadow-xl hover:shadow-forest-DEFAULT/10 transition-all duration-300"
-                >
-                  {/* Image */}
-                  <div className={`md:col-span-2 relative overflow-hidden ${!isEven ? 'md:order-2' : ''}`}>
-                    <img
-                      src={phase.img}
-                      alt={phase.name}
-                      className="w-full h-52 md:h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-forest-900/40" />
-                    <span className="absolute top-6 left-6 font-serif text-6xl font-bold text-white/20">
-                      {phase.number}
-                    </span>
-                    <div className="absolute bottom-6 left-6">
-                      <span className="text-xs font-semibold uppercase tracking-widest text-sage-200 bg-forest-DEFAULT/70 px-3 py-1 rounded-full">
-                        {phase.duration}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className={`md:col-span-3 bg-beige-50 p-8 md:p-10 ${!isEven ? 'md:order-1' : ''}`}>
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 bg-forest-DEFAULT/10 rounded-xl flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-forest-DEFAULT" />
-                      </div>
-                      <h3 className="font-serif text-2xl text-forest-800">{phase.name}</h3>
-                    </div>
-                    <p className="text-forest-600 leading-relaxed mb-6">{phase.desc}</p>
-                    <div className="grid grid-cols-2 gap-2">
-                      {phase.deliverables.map((d) => (
-                        <div key={d} className="flex items-center gap-2 text-sm text-forest-600">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-forest-DEFAULT flex-shrink-0" />
-                          {d}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+            {phases.map((phase, i) => (
+              <ImageCard
+                key={phase.number}
+                variant="horizontal"
+                icon={phase.icon}
+                image={phase.img}
+                imageAlt={phase.name}
+                title={phase.name}
+                paragraph={phase.desc}
+                tags={phase.deliverables}
+                reverse={i % 2 !== 0}
+              />
+            ))}
           </div>
         </div>
       </section>

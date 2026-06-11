@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Wifi, Brain, Smartphone, ChevronDown, Droplets, Sun, Thermometer, Wind } from 'lucide-react';
 import Button from '../components/ui/Button';
+import ImageCard from '../components/ui/ImageCard';
 import SectionTitle from '../components/sections/SectionTitle';
 
 const stats = [
@@ -123,44 +124,33 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                step: '01',
                 icon: Wifi,
                 title: 'Sense',
                 desc: 'The IoT sensor unit continuously monitors soil moisture, light, temperature, humidity, and air pressure with 95% accuracy.',
                 img: 'https://images.pexels.com/photos/4505166/pexels-photo-4505166.jpeg?auto=compress&cs=tinysrgb&w=600',
               },
               {
-                step: '02',
                 icon: Brain,
                 title: 'Analyze',
                 desc: 'Data is transmitted via WLAN using a Publisher-Subscriber model to a backend where AI evaluates plant health status in real time.',
                 img: 'https://images.pexels.com/photos/7318070/pexels-photo-7318070.jpeg?auto=compress&cs=tinysrgb&w=600',
               },
               {
-                step: '03',
                 icon: Smartphone,
                 title: 'Act',
                 desc: 'Receive individual care recommendations and automated warnings directly on your mobile app — before damage occurs.',
                 img: 'https://images.pexels.com/photos/3571551/pexels-photo-3571551.jpeg?auto=compress&cs=tinysrgb&w=600',
               },
-            ].map(({ step, icon: Icon, title, desc, img }) => (
-              <div
-                key={step}
-                className="group bg-beige-50 rounded-2xl overflow-hidden border border-beige-300 hover:border-forest-300 hover:shadow-lg hover:shadow-forest-DEFAULT/10 transition-all duration-300"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <img src={img} alt={title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-forest-800/30" />
-                  <span className="absolute top-4 left-4 font-serif text-5xl font-bold text-white/20">{step}</span>
-                </div>
-                <div className="p-6">
-                  <div className="w-10 h-10 bg-forest-DEFAULT/10 rounded-xl flex items-center justify-center mb-4">
-                    <Icon className="w-5 h-5 text-forest-DEFAULT" />
-                  </div>
-                  <h3 className="font-serif text-xl text-forest-800 mb-2">{title}</h3>
-                  <p className="text-forest-500 text-sm leading-relaxed">{desc}</p>
-                </div>
-              </div>
+            ].map(({ icon, title, desc, img }) => (
+              <ImageCard
+                key={title}
+                variant="vertical"
+                icon={icon}
+                image={img}
+                imageAlt={title}
+                title={title}
+                paragraph={desc}
+              />
             ))}
           </div>
         </div>

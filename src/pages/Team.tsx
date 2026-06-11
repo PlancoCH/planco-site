@@ -1,5 +1,6 @@
 import { Star, Users, Heart, Laugh } from 'lucide-react';
 import Button from '../components/ui/Button';
+import ImageCard from '../components/ui/ImageCard';
 import PageTitle from '../components/sections/PageTitle';
 import SectionTitle from '../components/sections/SectionTitle';
 
@@ -79,44 +80,16 @@ export default function Team() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="space-y-8">
             {members.map((member, i) => (
-              <div
+              <ImageCard
                 key={member.name}
-                className={`group grid md:grid-cols-5 gap-0 rounded-3xl overflow-hidden border border-beige-300 hover:border-forest-300 hover:shadow-xl hover:shadow-forest-DEFAULT/10 transition-all duration-300 ${
-                  i % 2 === 0 ? '' : 'md:flex-row-reverse'
-                }`}
-              >
-                {/* Photo */}
-                <div className={`md:col-span-2 relative overflow-hidden ${i % 2 !== 0 ? 'md:order-2' : ''}`}>
-                  <img
-                    src={member.img}
-                    alt={member.name}
-                    className="w-full h-64 md:h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className={`absolute inset-0 opacity-30 ${member.accent}`} />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-forest-900/80 to-transparent">
-                    <div className={`inline-flex text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full text-white ${member.accent} mb-2`}>
-                      {member.role}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className={`md:col-span-3 bg-beige-50 p-8 md:p-10 flex flex-col justify-center ${i % 2 !== 0 ? 'md:order-1' : ''}`}>
-                  <h3 className="font-serif text-3xl text-forest-800 mb-1">{member.name}</h3>
-                  <p className="text-forest-DEFAULT font-medium text-sm mb-5">{member.focus}</p>
-                  <p className="text-forest-600 leading-relaxed mb-6">{member.desc}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {member.traits.map((trait) => (
-                      <span
-                        key={trait}
-                        className="text-xs font-medium text-forest-600 bg-forest-DEFAULT/10 px-3 py-1 rounded-full border border-forest-DEFAULT/20"
-                      >
-                        {trait}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
+                variant="horizontal"
+                image={member.img}
+                imageAlt={member.name}
+                title={member.name}
+                paragraph={member.desc}
+                tags={member.traits}
+                reverse={i % 2 !== 0}
+              />
             ))}
           </div>
         </div>
