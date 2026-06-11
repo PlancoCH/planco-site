@@ -68,7 +68,7 @@ export default function Footer() {
 
         <div className="border-t border-forest-700 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-beige-500 text-xs">
-            &copy; 2024 Planco. A school project by Yannick, Marvin, Tobias &amp; Nils.
+            &copy; 2026 Planco. A school project by Yannick, Marvin, Tobias &amp; Nils.
           </p>
           <p className="text-beige-500 text-xs italic">
             "Don't just measure data, listen to the plant."
