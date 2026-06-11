@@ -7,6 +7,7 @@ type ButtonVariant = 'primary' | 'secondary' | 'ghost';
 interface ButtonProps extends Omit<ComponentPropsWithoutRef<'button'>, 'type'> {
   to?: string;
   variant?: ButtonVariant;
+  external?: boolean;
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
@@ -24,14 +25,19 @@ export default function Button({
   className = '',
   children,
   onClick,
+  external = false,
   ...rest
 }: ButtonProps) {
   const navigate = useNavigate();
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (to) {
-      navigate(to);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (external) {
+        window.location.href = to;
+      } else {
+        navigate(to);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     }
     onClick?.(e);
   };
