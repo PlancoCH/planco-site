@@ -1,8 +1,5 @@
+import { useNavigate } from 'react-router-dom';
 import { Droplets, Sun, Thermometer, Wind, Gauge, Wifi, Brain, Smartphone, CheckCircle2, ArrowRight, Zap, Shield, TrendingUp } from 'lucide-react';
-
-interface ProductProps {
-  onNavigate: (page: string) => void;
-}
 
 const sensors = [
   {
@@ -65,11 +62,8 @@ const aiFeatures = [
   },
 ];
 
-export default function Product({ onNavigate }: ProductProps) {
-  const handleNav = (page: string) => {
-    onNavigate(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+export default function Product() {
+  const navigate = useNavigate();
 
   return (
     <main className="pt-16">
@@ -258,7 +252,7 @@ export default function Product({ onNavigate }: ProductProps) {
           <h2 className="font-serif text-3xl md:text-4xl text-forest-800 mb-4">Curious about the team?</h2>
           <p className="text-forest-500 mb-8">Meet the four engineers who built Planco from idea to working prototype.</p>
           <button
-            onClick={() => handleNav('team')}
+            onClick={() => navigate('/team')}
             className="group inline-flex items-center gap-3 bg-forest-DEFAULT text-beige-100 font-semibold px-7 py-4 rounded-full hover:bg-forest-400 transition-all duration-300 hover:shadow-xl hover:shadow-forest-DEFAULT/25"
           >
             Meet the Team

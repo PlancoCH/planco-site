@@ -1,8 +1,5 @@
+import { useNavigate } from 'react-router-dom';
 import { Target, Map, Code2, TestTube, Presentation, Github, MessageSquare, Wifi, ArrowRight, CheckCircle2 } from 'lucide-react';
-
-interface ProjectProps {
-  onNavigate: (page: string) => void;
-}
 
 const phases = [
   {
@@ -73,11 +70,8 @@ const tools = [
   },
 ];
 
-export default function Project({ onNavigate }: ProjectProps) {
-  const handleNav = (page: string) => {
-    onNavigate(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+export default function Project() {
+  const navigate = useNavigate();
 
   return (
     <main className="pt-16">
@@ -234,7 +228,7 @@ export default function Project({ onNavigate }: ProjectProps) {
                 Beyond the technical outcomes, the team developed a deep respect for iterative development, honest testing, and the value of documentation as a communication tool — not just a bureaucratic formality.
               </p>
               <button
-                onClick={() => handleNav('product')}
+                onClick={() => navigate('/product')}
                 className="group inline-flex items-center gap-3 bg-forest-DEFAULT text-beige-100 font-semibold px-7 py-4 rounded-full hover:bg-forest-400 transition-all duration-300 hover:shadow-xl hover:shadow-forest-DEFAULT/25"
               >
                 Explore the Product
