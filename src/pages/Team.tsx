@@ -1,5 +1,6 @@
 import { Star, Users, Heart, Laugh } from 'lucide-react';
 import Button from '../components/ui/Button';
+import PageTitle from '../components/sections/PageTitle';
 
 const members = [
   {
@@ -66,21 +67,11 @@ const cultureValues = [
 export default function Team() {
   return (
     <main className="pt-16">
-      {/* Hero */}
-      <section className="relative py-24 bg-beige-50 overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-sage-100 rounded-full blur-3xl opacity-40 -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-        <div className="relative max-w-6xl mx-auto px-6 text-center">
-          <span className="text-xs font-semibold uppercase tracking-widest text-forest-DEFAULT bg-forest-DEFAULT/10 px-4 py-1.5 rounded-full inline-block mb-8">
-            The Team
-          </span>
-          <h1 className="font-serif text-5xl md:text-6xl text-forest-800 leading-tight mb-6">
-            Four people. One shared obsession.
-          </h1>
-          <p className="text-forest-500 text-lg max-w-xl mx-auto leading-relaxed">
-            Planco was built by a team that believed technology could genuinely help people connect with nature — and had a great time proving it.
-          </p>
-        </div>
-      </section>
+      <PageTitle
+        label="The Team"
+        title="Four people. One shared obsession."
+        subtitle="Planco was built by a team that believed technology could genuinely help people connect with nature — and had a great time proving it."
+      />
 
       {/* Team Members */}
       <section className="py-24 bg-beige-100">

@@ -1,5 +1,6 @@
 import { Droplets, Sun, Thermometer, Wind, Gauge, Wifi, Brain, Smartphone, CheckCircle2, Zap, Shield, TrendingUp } from 'lucide-react';
 import Button from '../components/ui/Button';
+import PageTitle from '../components/sections/PageTitle';
 
 const sensors = [
   {
@@ -65,42 +66,11 @@ const aiFeatures = [
 export default function Product() {
   return (
     <main className="pt-16">
-      {/* Hero */}
-      <section className="relative py-24 bg-beige-50 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.pexels.com/photos/2062938/pexels-photo-2062938.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt="Plant care close-up"
-            className="w-full h-full object-cover opacity-15"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-beige-50/80 to-beige-50" />
-        </div>
-        <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-          <span className="text-xs font-semibold uppercase tracking-widest text-forest-DEFAULT bg-forest-DEFAULT/10 px-4 py-1.5 rounded-full inline-block mb-8">
-            The Product
-          </span>
-          <h1 className="font-serif text-5xl md:text-6xl text-forest-800 leading-tight mb-6 max-w-3xl mx-auto text-balance">
-            An IoT & AI system that gives plants a voice
-          </h1>
-          <p className="text-forest-500 text-lg max-w-xl mx-auto leading-relaxed">
-            Five sensors. One AI brain. One mobile app. Complete plant health transparency.
-          </p>
-
-          {/* Results */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
-            {[
-              { value: '95%', label: 'Measurement Accuracy' },
-              { value: '20%', label: 'Lower Plant Mortality' },
-              { value: 'Real-time', label: 'Data Transmission' },
-            ].map(({ value, label }) => (
-              <div key={label} className="bg-white/80 backdrop-blur-sm border border-beige-300 rounded-2xl px-8 py-5 flex-1 max-w-44 mx-auto sm:mx-0">
-                <div className="font-serif text-3xl font-bold text-forest-DEFAULT mb-1">{value}</div>
-                <div className="text-forest-500 text-xs uppercase tracking-wider">{label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PageTitle
+        label="The Product"
+        title="An IoT & AI system that gives plants a voice"
+        subtitle="Five sensors. One AI brain. One mobile app. Complete plant health transparency."
+      />
 
       {/* Sensor Grid */}
       <section className="py-24 bg-beige-100">

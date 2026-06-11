@@ -1,5 +1,6 @@
 import { Target, Map, Code2, TestTube, Presentation, Github, MessageSquare, Wifi, CheckCircle2 } from 'lucide-react';
 import Button from '../components/ui/Button';
+import PageTitle from '../components/sections/PageTitle';
 
 const phases = [
   {
@@ -73,31 +74,11 @@ const tools = [
 export default function Project() {
   return (
     <main className="pt-16">
-      {/* Hero */}
-      <section className="relative py-24 bg-beige-50 overflow-hidden">
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-sage-100 rounded-full blur-3xl opacity-50 translate-y-1/3 -translate-x-1/3 pointer-events-none" />
-        <div className="relative max-w-6xl mx-auto px-6 text-center">
-          <span className="text-xs font-semibold uppercase tracking-widest text-forest-DEFAULT bg-forest-DEFAULT/10 px-4 py-1.5 rounded-full inline-block mb-8">
-            The Story
-          </span>
-          <h1 className="font-serif text-5xl md:text-6xl text-forest-800 leading-tight mb-6 max-w-3xl mx-auto text-balance">
-            From a classroom idea to a working plant intelligence system
-          </h1>
-          <p className="text-forest-500 text-lg max-w-xl mx-auto leading-relaxed">
-            One semester. Five structured phases. Four students. This is how Planco was built.
-          </p>
-
-          {/* Timeline badges */}
-          <div className="flex flex-wrap justify-center gap-3 mt-10">
-            {phases.map((p) => (
-              <div key={p.number} className="flex items-center gap-2 bg-white/80 border border-beige-300 px-4 py-2 rounded-full text-sm text-forest-600">
-                <span className="font-semibold text-forest-DEFAULT">{p.number}</span>
-                {p.name}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PageTitle
+        label="The Story"
+        title="From a classroom idea to a working plant intelligence system"
+        subtitle="One semester. Five structured phases. Four students. This is how Planco was built."
+      />
 
       {/* Context block */}
       <section className="py-16 bg-forest-DEFAULT">
