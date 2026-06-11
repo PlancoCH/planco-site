@@ -2,6 +2,7 @@ import { Droplets, Sun, Thermometer, Wind, Gauge, Wifi, Brain, Smartphone, Check
 import Button from '../components/ui/Button';
 import PageTitle from '../components/sections/PageTitle';
 import SectionTitle from '../components/sections/SectionTitle';
+import Quote from '../components/sections/Quote';
 
 const sensors = [
   {
@@ -190,21 +191,11 @@ export default function Product() {
         </div>
       </section>
 
-      {/* Image break */}
-      <section className="relative h-72 overflow-hidden">
-        <img
-          src="https://images.pexels.com/photos/1407305/pexels-photo-1407305.jpeg?auto=compress&cs=tinysrgb&w=1600"
-          alt="Close up of healthy tropical plant leaves"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-forest-900/50 flex items-center justify-center">
-          <blockquote className="text-center px-6">
-            <p className="font-serif text-2xl md:text-3xl italic text-beige-100 max-w-2xl">
-              "95% measurement accuracy and a 20% reduction in plant mortality during our semester-long testing phase."
-            </p>
-          </blockquote>
-        </div>
-      </section>
+      <Quote
+        text="95% measurement accuracy and a 20% reduction in plant mortality during our semester-long testing phase."
+        image="https://images.pexels.com/photos/1407305/pexels-photo-1407305.jpeg?auto=compress&cs=tinysrgb&w=1600"
+        imageAlt="Close up of healthy tropical plant leaves"
+      />
 
       {/* CTA */}
       <section className="py-20 bg-beige-50 text-center">

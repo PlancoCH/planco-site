@@ -1,6 +1,7 @@
 import { Star, Users, Heart, Laugh } from 'lucide-react';
 import Button from '../components/ui/Button';
 import ImageCard from '../components/ui/ImageCard';
+import Quote from '../components/sections/Quote';
 import PageTitle from '../components/sections/PageTitle';
 import SectionTitle from '../components/sections/SectionTitle';
 
@@ -95,20 +96,11 @@ export default function Team() {
         </div>
       </section>
 
-      {/* Team image */}
-      <section className="relative h-80 overflow-hidden">
-        <img
-          src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1600"
-          alt="Team collaboration"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-forest-900/60" />
-        <div className="absolute inset-0 flex items-center justify-center px-6">
-          <p className="font-serif text-2xl md:text-3xl italic text-beige-100 text-center max-w-2xl">
-            "A respectful, responsible, and humorous collaboration — exactly the kind of team you want to build something hard with."
-          </p>
-        </div>
-      </section>
+      <Quote
+        text="A respectful, responsible, and humorous collaboration — exactly the kind of team you want to build something hard with."
+        image="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1600"
+        imageAlt="Team collaboration"
+      />
 
       {/* Culture */}
       <section className="py-24 bg-beige-200">
