@@ -1,22 +1,8 @@
 import { useEffect, useRef } from 'react';
-import { Wifi, Brain, Smartphone, ChevronDown, Droplets, Sun, Thermometer, Wind } from 'lucide-react';
+import { Wifi, Brain, Smartphone, ChevronDown } from 'lucide-react';
 import Button from '../components/ui/Button';
 import ImageCard from '../components/ui/ImageCard';
 import SectionTitle from '../components/sections/SectionTitle';
-
-const stats = [
-  { value: '95%', label: 'Measurement Accuracy' },
-  { value: '20%', label: 'Reduction in Plant Mortality' },
-  { value: '5', label: 'Sensors in One Device' },
-  { value: '4', label: 'Expert Team Members' },
-];
-
-const sensors = [
-  { icon: Droplets, label: 'Soil Moisture', color: 'text-blue-500' },
-  { icon: Sun, label: 'Light Intensity', color: 'text-amber-500' },
-  { icon: Thermometer, label: 'Temperature', color: 'text-red-400' },
-  { icon: Wind, label: 'Air & Humidity', color: 'text-sage-400' },
-];
 
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -36,23 +22,20 @@ export default function Home() {
     <main>
       {/* Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-beige-50">
-        {/* Background image */}
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.pexels.com/photos/1084199/pexels-photo-1084199.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt="Lush green tropical plants"
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover opacity-40"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-beige-50 via-beige-50/90 to-beige-50/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-beige-50/70 via-beige-50/40 to-transparent" />
         </div>
 
-        {/* Decorative circles */}
-        <div className="absolute top-24 right-16 w-72 h-72 rounded-full bg-sage-100 opacity-40 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-24 left-12 w-48 h-48 rounded-full bg-forest-200 opacity-30 blur-2xl pointer-events-none" />
+        <div className="absolute top-32 -right-16 w-80 h-80 rounded-full bg-sage-200 opacity-40 blur-3xl pointer-events-none" />
 
         <div
           ref={heroRef}
-          className="relative z-10 max-w-6xl mx-auto px-6 pt-24 pb-20 opacity-0 transition-opacity duration-1000"
+          className="relative z-10 max-w-6xl mx-auto px-6 py-24 opacity-0 transition-opacity duration-1000"
         >
           <div className="max-w-2xl">
             <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-forest-DEFAULT bg-forest-DEFAULT/10 px-4 py-1.5 rounded-full mb-8">
@@ -65,7 +48,7 @@ export default function Home() {
               <em className="not-italic text-forest-DEFAULT">listen to the plant.</em>
             </h1>
 
-            <p className="text-forest-600 text-lg md:text-xl leading-relaxed mb-10 max-w-lg">
+            <p className="text-forest-500 text-lg md:text-xl leading-relaxed mb-10 max-w-lg">
               An AI-driven IoT system for intelligent, everyday plant care that makes plant health transparent — in real time.
             </p>
 
@@ -76,26 +59,22 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-forest-400 animate-bounce">
           <span className="text-xs uppercase tracking-widest">Scroll</span>
           <ChevronDown className="w-4 h-4" />
         </div>
       </section>
 
-      {/* Stats Banner */}
-      <section className="bg-forest-DEFAULT py-14">
+      {/* Sensor Intro */}
+      <section className="py-24 bg-beige-100">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {stats.map(({ value, label }) => (
-              <div key={label}>
-                <div className="font-serif text-4xl md:text-5xl font-bold text-beige-100 mb-1">
-                  {value}
-                </div>
-                <div className="text-sage-200 text-sm">{label}</div>
-              </div>
-            ))}
-          </div>
+          <SectionTitle
+            label="The Sensor"
+            title="A single device that listens to your plant"
+          />
+          <p className="text-forest-600 leading-relaxed max-w-2xl mx-auto text-center">
+            Planco's IoT sensor unit sits discreetly in your plant's pot, measuring five critical environmental parameters — soil moisture, light intensity, temperature, air humidity, and air pressure — every few seconds. The data streams wirelessly to an AI backend that translates raw numbers into clear, actionable care advice, so you always know exactly what your plant needs before visible symptoms appear.
+          </p>
         </div>
       </section>
 
@@ -146,54 +125,33 @@ export default function Home() {
       {/* Problem / Solution Split */}
       <section className="py-24 bg-beige-200">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="text-xs font-semibold uppercase tracking-widest text-red-400 mb-3 block">The Problem</span>
-              <h2 className="font-serif text-4xl text-forest-800 leading-tight mb-6">
-                Most indoor plants suffer in silence
-              </h2>
-              <p className="text-forest-600 leading-relaxed mb-6">
-                Millions of households face a common challenge: it's nearly impossible to accurately assess the individual needs of indoor plants. The result? Plants die from dehydration or root rot caused by overwatering — both entirely preventable.
-              </p>
-              <p className="text-forest-500 text-sm leading-relaxed">
-                Without real-time data, even caring plant owners are guessing. That guesswork costs plants their lives.
-              </p>
-            </div>
-            <div className="relative">
-              <img
-                src="https://images.pexels.com/photos/1903965/pexels-photo-1903965.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Wilting houseplant"
-                className="rounded-2xl w-full object-cover h-80"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-lg border border-beige-300 max-w-xs">
-                <p className="text-xs text-forest-500 font-medium uppercase tracking-wider mb-1">Without Planco</p>
-                <p className="text-forest-700 text-sm">"My pothos died again. I have no idea if I watered it too much or too little."</p>
-              </div>
-            </div>
-          </div>
+          <SectionTitle
+            label="The Challenge"
+            title="Why most plants never reach their potential"
+            subtitle="The gap between intention and outcome in everyday plant care."
+          />
 
-          <div className="grid md:grid-cols-2 gap-16 items-center mt-24">
-            <div className="relative order-2 md:order-1">
-              <img
-                src="https://images.pexels.com/photos/6930551/pexels-photo-6930551.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Thriving healthy plant"
-                className="rounded-2xl w-full object-cover h-80"
-              />
-              <div className="absolute -bottom-6 -right-6 bg-forest-DEFAULT rounded-xl p-4 shadow-lg max-w-xs">
-                <p className="text-xs text-sage-200 font-medium uppercase tracking-wider mb-1">With Planco</p>
-                <p className="text-beige-100 text-sm">"Planco told me my Monstera needs water in 2 days. My plants have never been healthier."</p>
-              </div>
-            </div>
-            <div className="order-1 md:order-2">
-              <span className="text-xs font-semibold uppercase tracking-widest text-forest-DEFAULT mb-3 block">The Solution</span>
-              <h2 className="font-serif text-4xl text-forest-800 leading-tight mb-6">
-                AI that speaks your plant's language
-              </h2>
-              <p className="text-forest-600 leading-relaxed mb-6">
-                Planco's IoT sensor unit sits discreetly in your plant's pot, measuring five critical environmental parameters every few seconds. The AI backend translates raw data into plain-language health reports and actionable care recommendations.
-              </p>
-              <Button to="/product" variant="ghost">Discover the full product</Button>
-            </div>
+          <div className="space-y-6">
+            <ImageCard
+              variant="horizontal"
+              image="https://images.pexels.com/photos/1903965/pexels-photo-1903965.jpeg?auto=compress&cs=tinysrgb&w=800"
+              imageAlt="Wilting houseplant"
+              title="Most indoor plants suffer in silence"
+              paragraph="Millions of households face a common challenge: it's nearly impossible to accurately assess the individual needs of indoor plants. The result? Plants die from dehydration or root rot caused by overwatering — both entirely preventable. Without real-time data, even caring plant owners are guessing. That guesswork costs plants their lives."
+              tags={["Overwatering", "Dehydration", "No Data"]}
+            />
+            <ImageCard
+              variant="horizontal"
+              image="https://images.pexels.com/photos/6930551/pexels-photo-6930551.jpeg?auto=compress&cs=tinysrgb&w=800"
+              imageAlt="Thriving healthy plant"
+              title="AI that speaks your plant's language"
+              paragraph="Planco's IoT sensor unit sits discreetly in your plant's pot, measuring five critical environmental parameters every few seconds. The AI backend translates raw data into plain-language health reports and actionable care recommendations."
+              tags={["IoT Sensor", "AI Analysis", "Real-time"]}
+              reverse
+            />
+          </div>
+          <div className="flex justify-center mt-8">
+            <Button to="/product" variant="ghost">Discover the full product</Button>
           </div>
         </div>
       </section>
