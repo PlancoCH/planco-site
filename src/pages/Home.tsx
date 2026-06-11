@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Wifi, Brain, Smartphone, ChevronDown, Droplets, Sun, Thermometer, Wind } from 'lucide-react';
 import Button from '../components/ui/Button';
+import SectionTitle from '../components/sections/SectionTitle';
 
 const stats = [
   { value: '95%', label: 'Measurement Accuracy' },
@@ -110,18 +111,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How It Works Overview */}
+      {/* How It Works */}
       <section className="py-24 bg-beige-100">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-xs font-semibold uppercase tracking-widest text-forest-DEFAULT">How It Works</span>
-            <h2 className="font-serif text-4xl md:text-5xl text-forest-800 mt-3 mb-4">
-              From soil to insight
-            </h2>
-            <p className="text-forest-500 max-w-md mx-auto">
-              Three seamless layers work together to give your plants a voice.
-            </p>
-          </div>
+          <SectionTitle
+            label="How It Works"
+            title="From soil to insight"
+            subtitle="Three seamless layers work together to give your plants a voice."
+          />
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -227,13 +224,11 @@ export default function Home() {
       {/* Team Teaser */}
       <section className="py-24 bg-beige-50">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <span className="text-xs font-semibold uppercase tracking-widest text-forest-DEFAULT mb-3 block">The People Behind It</span>
-          <h2 className="font-serif text-4xl md:text-5xl text-forest-800 mb-4">
-            Built with passion and a little humor
-          </h2>
-          <p className="text-forest-500 max-w-lg mx-auto mb-10">
-            Four students united by a love for plants, technology, and an irreverent team culture.
-          </p>
+          <SectionTitle
+            label="The People Behind It"
+            title="Built with passion and a little humor"
+            subtitle="Four students united by a love for plants, technology, and an irreverent team culture."
+          />
           <Button to="/team">Meet the Team</Button>
         </div>
       </section>

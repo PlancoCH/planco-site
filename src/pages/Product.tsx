@@ -1,6 +1,7 @@
 import { Droplets, Sun, Thermometer, Wind, Gauge, Wifi, Brain, Smartphone, CheckCircle2, Zap, Shield, TrendingUp } from 'lucide-react';
 import Button from '../components/ui/Button';
 import PageTitle from '../components/sections/PageTitle';
+import SectionTitle from '../components/sections/SectionTitle';
 
 const sensors = [
   {
@@ -72,18 +73,13 @@ export default function Product() {
         subtitle="Five sensors. One AI brain. One mobile app. Complete plant health transparency."
       />
 
-      {/* Sensor Grid */}
       <section className="py-24 bg-beige-100">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-xs font-semibold uppercase tracking-widest text-forest-DEFAULT mb-3 block">Sensor Array</span>
-            <h2 className="font-serif text-4xl md:text-5xl text-forest-800 mb-4">
-              Five senses for your plant
-            </h2>
-            <p className="text-forest-500 max-w-md mx-auto">
-              Each parameter is critical. Together, they paint a complete picture of plant health.
-            </p>
-          </div>
+          <SectionTitle
+            label="Sensor Array"
+            title="Five senses for your plant"
+            subtitle="Each parameter is critical. Together, they paint a complete picture of plant health."
+          />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {sensors.map(({ icon: Icon, name, desc, color, iconBg }) => (
@@ -171,15 +167,11 @@ export default function Product() {
       {/* AI Features */}
       <section className="py-24 bg-beige-100">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-xs font-semibold uppercase tracking-widest text-forest-DEFAULT mb-3 block">Artificial Intelligence</span>
-            <h2 className="font-serif text-4xl md:text-5xl text-forest-800 mb-4">
-              The brain behind the leaves
-            </h2>
-            <p className="text-forest-500 max-w-md mx-auto">
-              Raw numbers become actionable care intelligence through continuous AI analysis.
-            </p>
-          </div>
+          <SectionTitle
+            label="Artificial Intelligence"
+            title="The brain behind the leaves"
+            subtitle="Raw numbers become actionable care intelligence through continuous AI analysis."
+          />
 
           <div className="grid md:grid-cols-2 gap-8">
             {aiFeatures.map(({ icon: Icon, title, desc }) => (

@@ -1,6 +1,7 @@
 import { Target, Map, Code2, TestTube, Presentation, Github, MessageSquare, Wifi, CheckCircle2 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import PageTitle from '../components/sections/PageTitle';
+import SectionTitle from '../components/sections/SectionTitle';
 
 const phases = [
   {
@@ -102,12 +103,10 @@ export default function Project() {
       {/* Phases */}
       <section className="py-24 bg-beige-100">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-xs font-semibold uppercase tracking-widest text-forest-DEFAULT mb-3 block">Project Phases</span>
-            <h2 className="font-serif text-4xl md:text-5xl text-forest-800">
-              Five phases, one vision
-            </h2>
-          </div>
+          <SectionTitle
+            label="Project Phases"
+            title="Five phases, one vision"
+          />
 
           <div className="space-y-6">
             {phases.map((phase, i) => {
@@ -164,15 +163,11 @@ export default function Project() {
       {/* Tools */}
       <section className="py-24 bg-beige-200">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-xs font-semibold uppercase tracking-widest text-forest-DEFAULT mb-3 block">Tech Stack</span>
-            <h2 className="font-serif text-4xl text-forest-800 mb-4">
-              Built with the right tools
-            </h2>
-            <p className="text-forest-500 max-w-md mx-auto">
-              Simple, proven tools chosen for reliability and team familiarity.
-            </p>
-          </div>
+          <SectionTitle
+            label="Tech Stack"
+            title="Built with the right tools"
+            subtitle="Simple, proven tools chosen for reliability and team familiarity."
+          />
 
           <div className="grid md:grid-cols-3 gap-8">
             {tools.map(({ icon: Icon, name, desc, color }) => (

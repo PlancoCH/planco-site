@@ -1,6 +1,7 @@
 import { Star, Users, Heart, Laugh } from 'lucide-react';
 import Button from '../components/ui/Button';
 import PageTitle from '../components/sections/PageTitle';
+import SectionTitle from '../components/sections/SectionTitle';
 
 const members = [
   {
@@ -139,15 +140,11 @@ export default function Team() {
       {/* Culture */}
       <section className="py-24 bg-beige-200">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-xs font-semibold uppercase tracking-widest text-forest-DEFAULT mb-3 block">Team Culture</span>
-            <h2 className="font-serif text-4xl md:text-5xl text-forest-800 mb-4">
-              How we worked together
-            </h2>
-            <p className="text-forest-500 max-w-md mx-auto">
-              The product was shaped by the culture. Here's what defined us.
-            </p>
-          </div>
+          <SectionTitle
+            label="Team Culture"
+            title="How we worked together"
+            subtitle="The product was shaped by the culture. Here's what defined us."
+          />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {cultureValues.map(({ icon: Icon, title, desc }) => (
