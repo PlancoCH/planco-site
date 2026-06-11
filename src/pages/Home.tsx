@@ -73,19 +73,6 @@ export default function Home() {
               <Button to="/product">Understand Your Plants Today</Button>
               <Button to="/project" variant="secondary">Read the Story</Button>
             </div>
-
-            {/* Sensor pills */}
-            <div className="flex flex-wrap gap-3 mt-12">
-              {sensors.map(({ icon: Icon, label, color }) => (
-                <div
-                  key={label}
-                  className="flex items-center gap-2 bg-white/70 backdrop-blur-sm border border-beige-300 px-4 py-2 rounded-full text-sm text-forest-700"
-                >
-                  <Icon className={`w-4 h-4 ${color}`} />
-                  {label}
-                </div>
-              ))}
-            </div>
           </div>
         </div>
 
