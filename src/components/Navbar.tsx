@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Leaf, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import Logo from './ui/Logo';
 
 const navLinks = [
   { id: 'home', label: 'Home', path: '/' },
@@ -39,17 +40,7 @@ export default function Navbar() {
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <button
-          onClick={() => handleNav('/')}
-          className="flex items-center gap-2 group"
-        >
-          <div className="w-8 h-8 bg-forest-DEFAULT rounded-full flex items-center justify-center group-hover:bg-forest-400 transition-colors">
-            <Leaf className="w-4 h-4 text-beige-100" />
-          </div>
-          <span className="font-serif text-xl font-semibold text-forest-700 tracking-tight">
-            Planco
-          </span>
-        </button>
+        <Logo variant="light" clickable />
 
         {/* Desktop Links */}
         <ul className="hidden md:flex items-center gap-8">
