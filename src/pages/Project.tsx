@@ -1,4 +1,4 @@
-import { Target, Map, Code2, TestTube, Presentation, Github, MessageSquare, Server } from 'lucide-react';
+import { Target, Map, Code2, TestTube, Presentation, Github, Codepen, Server } from 'lucide-react';
 import Button from '../components/ui/Button';
 import ImageCard from '../components/ui/ImageCard';
 import PageTitle from '../components/sections/PageTitle';
@@ -54,10 +54,10 @@ const phases = [
 
 const tools = [
   {
-    icon: MessageSquare,
-    name: 'MS Teams',
-    desc: 'Daily standups, sprint reviews, and all asynchronous communication happened here.',
-    color: 'text-blue-600 bg-blue-50 border-blue-100',
+    icon: Codepen,
+    name: 'React',
+    desc: 'The mobile app frontend was built with React, delivering a fast and responsive user experience.',
+    color: 'text-cyan-600 bg-cyan-50 border-cyan-100',
   },
   {
     icon: Github,
