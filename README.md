@@ -5,7 +5,7 @@
 | Metadata | Information |
 | --- | --- |
 | **Organization** | Planco |
-| **Project Status** | 🔴 Alpha |
+| **Project Status** |🟢 Production|
 | **Primary Owner** | @utigernils |
 | **Primary Tech Stack** | React |
 | **CI/CD Status** | NOT SETUP |
