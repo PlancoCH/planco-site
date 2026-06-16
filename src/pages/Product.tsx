@@ -211,22 +211,14 @@ export default function Product() {
             subtitle="We are happy to share more details about Planco. Reach out via email or check out our code on GitHub."
           />
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8">
-            <a
-              href="mailto:info@planco.ch"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-forest-DEFAULT text-beige-100 hover:bg-forest-700 transition-colors shadow-lg shadow-forest-DEFAULT/20"
-            >
+            <Button to="mailto:info@planco.ch" external>
               <Mail className="w-5 h-5" />
-              <span className="font-medium">info@planco.ch</span>
-            </a>
-            <a
-              href="https://github.com/PlancoCH/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full border-2 border-forest-DEFAULT text-forest-DEFAULT hover:bg-forest-DEFAULT hover:text-beige-100 transition-colors"
-            >
+              info@planco.ch
+            </Button>
+            <Button to="https://github.com/PlancoCH/" external variant="secondary">
               <Github className="w-5 h-5" />
-              <span className="font-medium">github.com/PlancoCH</span>
-            </a>
+              github.com/PlancoCH
+            </Button>
           </div>
         </div>
       </section>
