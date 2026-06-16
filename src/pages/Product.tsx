@@ -31,8 +31,11 @@ const sensors = [
     icon: Gauge,
     name: 'Air Pressure',
     desc: 'Barometric pressure data correlates with weather patterns, enabling the AI to anticipate environmental changes and adapt recommendations.',
-    color: 'bg-forest-50 text-forest-DEFAULT border-forest-100',
-    iconBg: 'bg-sage-100',
+  },
+  {
+    icon: Wifi,
+    name: 'WLAN Connectivity',
+    desc: 'All sensor data is transmitted wirelessly over WLAN to the Laravel backend. The ESP32 microcontroller handles connectivity natively.',
   },
 ];
 
@@ -86,29 +89,9 @@ export default function Product() {
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sensors.map(({ icon: Icon, name, desc, color, iconBg }) => (
-              <div
-                key={name}
-                className={`group rounded-2xl border p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ${color}`}
-              >
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${iconBg}`}>
-                  <Icon className="w-6 h-6" />
-                </div>
-                <h3 className="font-serif text-xl mb-2 text-forest-800">{name}</h3>
-                <p className="text-sm leading-relaxed text-forest-600">{desc}</p>
-              </div>
+            {sensors.map(({ icon, name, desc }) => (
+              <FeatureCard key={name} icon={icon} title={name} description={desc} />
             ))}
-
-            {/* Connectivity card */}
-            <div className="rounded-2xl border border-forest-200 bg-forest-DEFAULT p-6 hover:shadow-lg hover:shadow-forest-DEFAULT/20 transition-all duration-300 hover:-translate-y-1">
-              <div className="w-12 h-12 rounded-xl bg-forest-400 flex items-center justify-center mb-4">
-                <Wifi className="w-6 h-6 text-beige-100" />
-              </div>
-              <h3 className="font-serif text-xl mb-2 text-beige-100">WLAN Connectivity</h3>
-              <p className="text-sm leading-relaxed text-sage-200">
-                All sensor data is transmitted wirelessly over WLAN to the Laravel backend. The ESP32 microcontroller handles connectivity natively.
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -145,20 +128,20 @@ export default function Product() {
               {[
                 { icon: Gauge, label: 'IoT Sensor Unit', sub: 'Measures 5 parameters', bg: 'bg-sage-100 border-sage-200' },
                 { icon: Wifi, label: 'WLAN Transmission', sub: 'ESP32 connectivity', bg: 'bg-beige-100 border-beige-300', connector: true },
-                { icon: Brain, label: 'Laravel Backend', sub: 'Data ingestion & AI analysis', bg: 'bg-forest-DEFAULT border-forest-400', dark: true },
+                { icon: Brain, label: 'Laravel Backend', sub: 'Data ingestion & AI analysis', bg: 'bg-forest-500 border-forest-400', dark: true },
                 { icon: Smartphone, label: 'Mobile App', sub: 'Recommendations & alerts', bg: 'bg-sage-100 border-sage-200', connector: true },
               ].map(({ icon: Icon, label, sub, bg, dark, connector }, i) => (
                 <div key={i} className="flex flex-col items-center">
                   {connector && (
                     <div className="w-px h-6 bg-forest-300 mb-1" />
                   )}
-                  <div className={`w-full rounded-xl border px-6 py-4 flex items-center gap-4 ${bg} ${dark ? 'text-beige-100' : 'text-forest-700'}`}>
-                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${dark ? 'bg-forest-400' : 'bg-white/60'}`}>
-                      <Icon className={`w-5 h-5 ${dark ? 'text-beige-100' : 'text-forest-DEFAULT'}`} />
+                  <div className={`w-full rounded-xl border px-6 py-4 flex items-center gap-4 ${bg} ${dark ? 'text-white' : 'text-forest-700'}`}>
+                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${dark ? 'bg-white/20' : 'bg-white/60'}`}>
+                      <Icon className={`w-5 h-5 ${dark ? 'text-white' : 'text-forest-DEFAULT'}`} />
                     </div>
                     <div>
-                      <div className={`font-semibold text-sm ${dark ? 'text-beige-100' : 'text-forest-800'}`}>{label}</div>
-                      <div className={`text-xs ${dark ? 'text-sage-200' : 'text-forest-500'}`}>{sub}</div>
+                      <div className={`font-semibold text-sm ${dark ? 'text-white' : 'text-forest-800'}`}>{label}</div>
+                      <div className={`text-xs ${dark ? 'text-white/70' : 'text-forest-500'}`}>{sub}</div>
                     </div>
                   </div>
                 </div>
