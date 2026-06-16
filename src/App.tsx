@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Product from './pages/Product';
 import Team from './pages/Team';
 import Project from './pages/Project';
+import NotFound from './pages/NotFound';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/product" element={<Product />} />
           <Route path="/team" element={<Team />} />
           <Route path="/project" element={<Project />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
       <Footer />

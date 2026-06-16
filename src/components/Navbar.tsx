@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import Logo from './ui/Logo';
+import Button from './ui/Button';
 
 const navLinks = [
   { id: 'home', label: 'Home', path: '/' },
-  { id: 'product', label: 'The Product', path: '/product' },
+  { id: 'product', label: 'The System', path: '/product' },
   { id: 'team', label: 'Our Team', path: '/team' },
   { id: 'project', label: 'The Story', path: '/project' },
 ];
@@ -66,12 +67,13 @@ export default function Navbar() {
         </ul>
 
         {/* CTA */}
-        <button
-          onClick={() => handleNav('/product')}
-          className="hidden md:inline-flex items-center gap-2 bg-forest-DEFAULT text-beige-100 text-sm font-medium px-5 py-2.5 rounded-full hover:bg-forest-400 transition-all duration-300 hover:shadow-lg hover:shadow-forest-DEFAULT/20 active:scale-95"
+        <Button
+          to="https://app.planco.ch"
+          external
+          className="hidden md:inline-flex text-sm px-5 py-2.5"
         >
-          Explore Product
-        </button>
+          Open App
+        </Button>
 
         {/* Mobile Menu Toggle */}
         <button
@@ -103,12 +105,13 @@ export default function Navbar() {
             </li>
           ))}
           <li>
-            <button
-              onClick={() => handleNav('/product')}
-              className="w-full bg-forest-DEFAULT text-beige-100 text-sm font-medium px-5 py-2.5 rounded-full hover:bg-forest-400 transition-colors"
+            <Button
+              to="https://app.planco.ch"
+              external
+              className="w-full text-sm px-5 py-2.5"
             >
-              Explore Product
-            </button>
+              Open App
+            </Button>
           </li>
         </ul>
       </div>
