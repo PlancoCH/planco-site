@@ -24,7 +24,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center overflow-hidden bg-beige-50">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://cdn.pixabay.com/photo/2024/08/04/15/38/monstera-deliciosa-8944711_960_720.jpg"
+            src="https://images.pexels.com/photos/3571551/pexels-photo-3571551.jpeg"
             alt="Lush green tropical plants"
             className="w-full h-full object-cover opacity-40"
           />
@@ -100,17 +100,19 @@ export default function Home() {
                 icon: Wifi,
                 title: 'Sense',
                 desc: 'The IoT sensor unit continuously monitors soil moisture, light, temperature, humidity, and air pressure.',
+                img: 'https://images.pexels.com/photos/9709224/pexels-photo-9709224.jpeg',
               },
               {
                 icon: Brain,
                 title: 'Analyze',
                 desc: 'Sensor data is transmitted via WLAN to a Laravel backend where AI evaluates plant health status.',
+                img: 'https://images.pexels.com/photos/6280508/pexels-photo-6280508.jpeg?auto=compress&cs=tinysrgb&w=600',
               },
               {
                 icon: Smartphone,
                 title: 'Act',
                 desc: 'A React-based mobile application displays individual care recommendations and automated warnings based on the AI analysis.',
-                img: 'https://images.pexels.com/photos/3571551/pexels-photo-3571551.jpeg?auto=compress&cs=tinysrgb&w=600',
+                img: 'https://images.pexels.com/photos/6912816/pexels-photo-6912816.jpeg?auto=compress&cs=tinysrgb&w=600',
               },
             ].map(({ icon, title, desc, img }) => (
               <ImageCard
@@ -147,7 +149,7 @@ export default function Home() {
             />
             <ImageCard
               variant="horizontal"
-              image="https://images.pexels.com/photos/6930551/pexels-photo-6930551.jpeg?auto=compress&cs=tinysrgb&w=800"
+              image="https://images.pexels.com/photos/6912821/pexels-photo-6912821.jpeg?auto=compress&cs=tinysrgb&w=800"
               imageAlt="Thriving healthy plant"
               title="A data-driven approach to plant health"
               paragraph="Planco places a custom IoT sensor unit in the plant's pot, measuring five critical environmental parameters at regular intervals. The AI backend translates raw sensor data into plain-language health reports and actionable care recommendations, bridging the gap between data and practical plant care."

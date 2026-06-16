@@ -73,10 +73,10 @@ export default function Product() {
 
       <ImageGallery
         images={[
-          { src: 'https://images.pexels.com/photos/4505166/pexels-photo-4505166.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'IoT sensor in plant pot' },
-          { src: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Sensor hardware components' },
-          { src: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Testing the sensor unit' },
-          { src: 'https://images.pexels.com/photos/7318070/pexels-photo-7318070.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Mobile app interface' },
+          { src: '/IMG20260513013120.jpg', alt: 'IoT sensor in plant pot' },
+          { src: '/IMG20260513151400.jpg', alt: 'Sensor hardware components' },
+          { src: '/IMG20260513013128.jpg', alt: 'Testing the sensor unit' },
+          { src: 'https://images.pexels.com/photos/9730589/pexels-photo-9730589.jpeg', alt: 'Mobile app interface' },
         ]}
       />
 

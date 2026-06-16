@@ -12,7 +12,7 @@ const phases = [
     duration: 'Weeks 1–2',
     desc: 'The team established a shared vision: make plant health transparent through accessible technology. This phase covered research into household plant care challenges, user need analysis, and the definition of Planco\'s core value proposition.',
     deliverables: ['Project charter', 'Vision statement', 'Stakeholder analysis', 'Problem space mapping'],
-    img: 'https://images.pexels.com/photos/6913098/pexels-photo-6913098.jpeg?auto=compress&cs=tinysrgb&w=600',
+    img: 'https://images.pexels.com/photos/372787/pexels-photo-372787.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     number: '02',
@@ -21,7 +21,7 @@ const phases = [
     duration: 'Weeks 3–4',
     desc: 'With the goal defined, the team designed the technical architecture. This phase produced the sensor selection rationale, the communication architecture with a Laravel backend and PostgreSQL database, the AI analysis concept, and a fully scoped project plan with milestones.',
     deliverables: ['Technical architecture', 'Component selection', 'Risk register', 'Project schedule'],
-    img: 'https://images.pexels.com/photos/7532152/pexels-photo-7532152.jpeg?auto=compress&cs=tinysrgb&w=600',
+    img: '/IMG20260513013128.jpg',
   },
   {
     number: '03',
@@ -39,7 +39,7 @@ const phases = [
     duration: 'Weeks 11–13',
     desc: 'Marvin led a rigorous testing regime. Each sensor was calibrated and validated against reference instruments. The AI model was stress-tested with edge-case conditions. Results showed 95% measurement accuracy and a 20% reduction in plant mortality versus the control group.',
     deliverables: ['Test protocols', 'Accuracy benchmarks', 'Performance reports', 'Bug-fix sprints'],
-    img: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600',
+    img: '/IMG20260513152437.jpg',
   },
   {
     number: '05',
@@ -48,7 +48,7 @@ const phases = [
     duration: 'Week 14',
     desc: 'The semester concluded with a live demonstration of the complete Planco system. The team presented the findings, technical implementation, and validated results to instructors and peers.',
     deliverables: ['Final report', 'Live demo', 'Presentation deck', 'Lessons learned'],
-    img: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600',
+    img: 'https://images.pexels.com/photos/7750129/pexels-photo-7750129.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
 ];
 
