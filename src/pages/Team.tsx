@@ -44,29 +44,6 @@ const members = [
   },
 ];
 
-const cultureValues = [
-  {
-    icon: Users,
-    title: "Respectful Collaboration",
-    desc: "Every idea received a fair hearing. Disagreements were resolved through structured discussion, never hierarchy.",
-  },
-  {
-    icon: Heart,
-    title: "Shared Responsibility",
-    desc: "Ownership was collective. When something succeeded, the team celebrated together. When it failed, they fixed it together.",
-  },
-  {
-    icon: Star,
-    title: "Commitment to Quality",
-    desc: "Good enough was never good enough. The team held each other to high standards throughout every project phase.",
-  },
-  {
-    icon: Laugh,
-    title: "A Healthy Dose of Humor",
-    desc: "Levity made hard sprints manageable. Planco was developed with plenty of laughter alongside the late nights.",
-  },
-];
-
 export default function Team() {
   return (
     <main className="pt-16">
@@ -96,41 +73,7 @@ export default function Team() {
         </div>
       </section>
 
-      <Quote
-        text="A respectful, responsible, and humorous collaboration — exactly the kind of team you want when tackling a complex interdisciplinary project."
-        image="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1600"
-        imageAlt="Team collaboration"
-      />
 
-      {/* Culture */}
-      <section className="py-24 bg-beige-200">
-        <div className="max-w-6xl mx-auto px-6">
-          <SectionTitle
-            label="Team Culture"
-            title="How we worked together"
-            subtitle="The product was shaped by the culture. Here is what defined the team."
-          />
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {cultureValues.map(({ icon: Icon, title, desc }) => (
-              <div
-                key={title}
-                className="bg-beige-50 rounded-2xl border border-beige-300 p-6 hover:border-forest-300 hover:shadow-lg hover:shadow-forest-DEFAULT/10 transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="w-10 h-10 bg-forest-DEFAULT/10 rounded-xl flex items-center justify-center mb-4">
-                  <Icon className="w-5 h-5 text-forest-DEFAULT" />
-                </div>
-                <h3 className="font-serif text-lg text-forest-800 mb-2">
-                  {title}
-                </h3>
-                <p className="text-forest-500 text-sm leading-relaxed">
-                  {desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="py-20 bg-beige-50 text-center">
