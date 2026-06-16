@@ -6,7 +6,7 @@ import Button from './ui/Button';
 
 const navLinks = [
   { id: 'home', label: 'Home', path: '/' },
-  { id: 'product', label: 'The Product', path: '/product' },
+  { id: 'product', label: 'The System', path: '/product' },
   { id: 'team', label: 'Our Team', path: '/team' },
   { id: 'project', label: 'The Story', path: '/project' },
 ];
@@ -72,7 +72,7 @@ export default function Navbar() {
           external
           className="hidden md:inline-flex text-sm px-5 py-2.5"
         >
-          To the Application
+          Open App
         </Button>
 
         {/* Mobile Menu Toggle */}
@@ -110,7 +110,7 @@ export default function Navbar() {
               external
               className="w-full text-sm px-5 py-2.5"
             >
-              To the Application
+              Open App
             </Button>
           </li>
         </ul>

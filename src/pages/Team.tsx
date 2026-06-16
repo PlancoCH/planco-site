@@ -10,7 +10,7 @@ const members = [
     name: "Yannick Blatty",
     role: "Project Lead",
     focus: "Coordination & Communication",
-    desc: "Yannick kept the ship pointed in the right direction. As Project Lead he orchestrated all moving parts — from milestone tracking to stakeholder communication — ensuring the team never lost sight of the vision.",
+    desc: "Yannick kept the project on track. As Project Lead he orchestrated all moving parts — from milestone tracking to stakeholder communication — ensuring the team never lost sight of the vision.",
     traits: ["Strategic thinking", "Team cohesion", "Communication"],
     img: "https://static.vecteezy.com/system/resources/thumbnails/004/511/281/small/default-avatar-photo-placeholder-profile-picture-vector.jpg",
     accent: "bg-forest-DEFAULT",
@@ -19,7 +19,7 @@ const members = [
     name: "Marvin Hegi",
     role: "Quality Guardian",
     focus: "Testing, Quality & Documentation",
-    desc: "Marvin was the voice of rigor. He defined test cases, maintained documentation standards, and made sure every claim about Planco was backed by evidence. The 95% accuracy stat? That has Marvin's fingerprints on it.",
+    desc: "Marvin was the voice of rigor. He defined test cases, maintained documentation standards, and made sure every claim about Planco was backed by evidence. The 95% measurement accuracy is a result of his thorough testing.",
     traits: ["Test design", "Documentation", "Attention to detail"],
     img: "https://static.vecteezy.com/system/resources/thumbnails/004/511/281/small/default-avatar-photo-placeholder-profile-picture-vector.jpg",
     accent: "bg-sage-400",
@@ -28,7 +28,7 @@ const members = [
     name: "Tobias Clausen",
     role: "Analyst",
     focus: "Analysis, Requirements & Risk Management",
-    desc: "Tobias translated ambiguity into clarity. He led requirements engineering, dissected risks before they materialized, and built the analytical foundation that gave every design decision a solid rationale.",
+    desc: "Tobias translated ambiguity into clarity. He led requirements engineering, identified risks before they materialized, and built the analytical foundation that gave every design decision a solid rationale.",
     traits: ["Risk analysis", "Requirements", "Systems thinking"],
     img: "https://static.vecteezy.com/system/resources/thumbnails/004/511/281/small/default-avatar-photo-placeholder-profile-picture-vector.jpg",
     accent: "bg-amber-600",
@@ -37,8 +37,8 @@ const members = [
     name: "Nils Utiger",
     role: "Tech Lead",
     focus: "Technology & Migration (Hardware)",
-    desc: "Nils made the hardware breathe. He selected sensors, wired the IoT unit, set up the MQTT pipeline, and handled all technical migration challenges. If Planco measures something accurately, Nils built the part that measures it.",
-    traits: ["IoT hardware", "MQTT / WLAN", "Systems integration"],
+    desc: "Nils made the hardware work. He selected sensors, assembled the IoT unit, configured the data pipeline, and handled all technical integration challenges. If Planco measures something accurately, Nils built the part that measures it.",
+    traits: ["IoT hardware", "WLAN / Connectivity", "Systems integration"],
     img: "https://static.vecteezy.com/system/resources/thumbnails/004/511/281/small/default-avatar-photo-placeholder-profile-picture-vector.jpg",
     accent: "bg-forest-600",
   },
@@ -63,7 +63,7 @@ const cultureValues = [
   {
     icon: Laugh,
     title: "A Healthy Dose of Humor",
-    desc: "Levity made hard sprints bearable. Planco was built with plenty of laughter alongside the late nights.",
+    desc: "Levity made hard sprints manageable. Planco was developed with plenty of laughter alongside the late nights.",
   },
 ];
 
@@ -72,8 +72,8 @@ export default function Team() {
     <main className="pt-16">
       <PageTitle
         label="The Team"
-        title="Four people. One shared obsession."
-        subtitle="Planco was built by a team that believed technology could genuinely help people connect with nature — and had a great time proving it."
+        title="Four people. One shared project."
+        subtitle="Planco was developed by a team that believed technology could genuinely help people connect with nature — and had a great time proving it."
       />
 
       {/* Team Members */}
@@ -97,7 +97,7 @@ export default function Team() {
       </section>
 
       <Quote
-        text="A respectful, responsible, and humorous collaboration — exactly the kind of team you want to build something hard with."
+        text="A respectful, responsible, and humorous collaboration — exactly the kind of team you want when tackling a complex interdisciplinary project."
         image="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1600"
         imageAlt="Team collaboration"
       />
@@ -108,7 +108,7 @@ export default function Team() {
           <SectionTitle
             label="Team Culture"
             title="How we worked together"
-            subtitle="The product was shaped by the culture. Here's what defined us."
+            subtitle="The product was shaped by the culture. Here is what defined the team."
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -140,7 +140,7 @@ export default function Team() {
             title="Want to know how it all came together?"
             subtitle="Explore the project journey — five phases, one semester, and a lot of learning."
           />
-          <Button to="/project">Read the Story</Button>
+          <Button to="/project">Project Journey</Button>
         </div>
       </section>
     </main>

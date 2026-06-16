@@ -40,7 +40,7 @@ export default function Home() {
           <div className="max-w-2xl">
             <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-forest-DEFAULT bg-forest-DEFAULT/10 px-4 py-1.5 rounded-full mb-8">
               <span className="w-1.5 h-1.5 rounded-full bg-forest-DEFAULT animate-pulse" />
-              AI-Driven IoT Plant Care
+              Student Research Project
             </span>
 
             <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-semibold text-forest-800 leading-[1.1] mb-6 text-balance">
@@ -49,12 +49,12 @@ export default function Home() {
             </h1>
 
             <p className="text-forest-500 text-lg md:text-xl leading-relaxed mb-10 max-w-lg">
-              An AI-driven IoT system for intelligent, everyday plant care that makes plant health transparent — in real time.
+              A student research project exploring how IoT sensor technology and artificial intelligence can make plant health transparent and understandable.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button to="/product">Understand Your Plants Today</Button>
-              <Button to="/project" variant="secondary">Read the Story</Button>
+              <Button to="/product">Explore the Hardware</Button>
+              <Button to="/project" variant="secondary">Project Journey</Button>
 
 
         </div>
@@ -72,14 +72,14 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <SectionTitle
             label="The Sensor"
-            title="A single device that listens to your plant"
+            title="Custom-built IoT hardware"
           />
           <ImageCard
             variant="horizontal"
             image="https://images.pexels.com/photos/4505166/pexels-photo-4505166.jpeg?auto=compress&cs=tinysrgb&w=800"
             imageAlt="Planco IoT sensor unit"
             title="Five sensors, one compact device"
-            paragraph="The Planco sensor unit combines a capacitive soil moisture probe, ambient light sensor, temperature and humidity sensor, and a barometric pressure sensor into a single, discreet package. It connects via WLAN and transmits readings in real time through the MQTT protocol."
+            paragraph="Built around an ESP32 microcontroller, the sensor unit integrates a capacitive soil moisture probe, ambient light sensor, temperature and humidity sensor, and a barometric pressure sensor. It connects via WLAN and transmits readings to the Laravel backend at regular intervals."
             tags={["Soil Moisture", "Light (Lux)", "Temperature", "Humidity", "Air Pressure"]}
           />
         </div>
@@ -89,9 +89,9 @@ export default function Home() {
       <section className="py-24 bg-beige-100">
         <div className="max-w-6xl mx-auto px-6">
           <SectionTitle
-            label="How It Works"
+            label="System Overview"
             title="From soil to insight"
-            subtitle="Three seamless layers work together to give your plants a voice."
+            subtitle="Three integrated layers form the data pipeline from sensor to user."
           />
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -99,19 +99,17 @@ export default function Home() {
               {
                 icon: Wifi,
                 title: 'Sense',
-                desc: 'The IoT sensor unit continuously monitors soil moisture, light, temperature, humidity, and air pressure with 95% accuracy.',
-                img: 'https://images.pexels.com/photos/4505166/pexels-photo-4505166.jpeg?auto=compress&cs=tinysrgb&w=600',
+                desc: 'The IoT sensor unit continuously monitors soil moisture, light, temperature, humidity, and air pressure.',
               },
               {
                 icon: Brain,
                 title: 'Analyze',
-                desc: 'Data is transmitted via WLAN using a Publisher-Subscriber model to a backend where AI evaluates plant health status in real time.',
-                img: 'https://images.pexels.com/photos/7318070/pexels-photo-7318070.jpeg?auto=compress&cs=tinysrgb&w=600',
+                desc: 'Sensor data is transmitted via WLAN to a Laravel backend where AI evaluates plant health status.',
               },
               {
                 icon: Smartphone,
                 title: 'Act',
-                desc: 'Receive individual care recommendations and automated warnings directly on your mobile app — before damage occurs.',
+                desc: 'A React-based mobile application displays individual care recommendations and automated warnings based on the AI analysis.',
                 img: 'https://images.pexels.com/photos/3571551/pexels-photo-3571551.jpeg?auto=compress&cs=tinysrgb&w=600',
               },
             ].map(({ icon, title, desc, img }) => (
@@ -133,9 +131,9 @@ export default function Home() {
       <section className="py-24 bg-beige-200">
         <div className="max-w-6xl mx-auto px-6">
           <SectionTitle
-            label="The Challenge"
+            label="Problem Statement"
             title="Why most plants never reach their potential"
-            subtitle="The gap between intention and outcome in everyday plant care."
+            subtitle="Understanding the gap between intention and outcome in everyday plant care."
           />
 
           <div className="space-y-6">
@@ -143,22 +141,22 @@ export default function Home() {
               variant="horizontal"
               image="https://images.pexels.com/photos/1903965/pexels-photo-1903965.jpeg?auto=compress&cs=tinysrgb&w=800"
               imageAlt="Wilting houseplant"
-              title="Most indoor plants suffer in silence"
-              paragraph="Millions of households face a common challenge: it's nearly impossible to accurately assess the individual needs of indoor plants. The result? Plants die from dehydration or root rot caused by overwatering — both entirely preventable. Without real-time data, even caring plant owners are guessing. That guesswork costs plants their lives."
+              title="The difficulty of accurate plant care"
+              paragraph="Households everywhere face a common challenge: it is nearly impossible to accurately assess the individual needs of indoor plants without measurement tools. The result is often dehydration or root rot caused by overwatering — both entirely preventable. Without reliable data, care decisions are based on guesswork."
               tags={["Overwatering", "Dehydration", "No Data"]}
             />
             <ImageCard
               variant="horizontal"
               image="https://images.pexels.com/photos/6930551/pexels-photo-6930551.jpeg?auto=compress&cs=tinysrgb&w=800"
               imageAlt="Thriving healthy plant"
-              title="AI that speaks your plant's language"
-              paragraph="Planco's IoT sensor unit sits discreetly in your plant's pot, measuring five critical environmental parameters every few seconds. The AI backend translates raw data into plain-language health reports and actionable care recommendations."
+              title="A data-driven approach to plant health"
+              paragraph="Planco places a custom IoT sensor unit in the plant's pot, measuring five critical environmental parameters at regular intervals. The AI backend translates raw sensor data into plain-language health reports and actionable care recommendations, bridging the gap between data and practical plant care."
               tags={["IoT Sensor", "AI Analysis", "Real-time"]}
               reverse
             />
           </div>
           <div className="flex justify-center mt-8">
-            <Button to="/product" variant="ghost">Discover the full product</Button>
+            <Button to="/product" variant="ghost">Learn more about the system</Button>
           </div>
         </div>
       </section>
@@ -169,7 +167,7 @@ export default function Home() {
           <SectionTitle
             label="The People Behind It"
             title="Built with passion and a little humor"
-            subtitle="Four students united by a love for plants, technology, and an irreverent team culture."
+            subtitle="Four students collaborating on an interdisciplinary project combining hardware, software, and AI."
           />
           <Button to="/team">Meet the Team</Button>
         </div>
