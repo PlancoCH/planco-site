@@ -1,6 +1,5 @@
 # Planco Site
-
-<img width="200" height="200" alt="264412911" src="https://github.com/user-attachments/assets/3e43406c-acdc-4e9d-99e8-ffc990e67d55" />
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/0b835a11-b404-4496-b446-7662c7bfa788" />
 
 | Metadata | Information |
 | --- | --- |
